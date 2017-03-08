@@ -43,7 +43,7 @@ func main() {
 				var channel string
 				json.Unmarshal(m.Channel, &channel)
 				file := SaveTempFile(GetFile(m.File))
-				chrisd := jessify(file)
+				chrisd := Jessify(file)
 				// log.Printf("Uploading to %s", channel)
 				// Upload(chrisd, channel)
 				url := SaveFile(chrisd)
