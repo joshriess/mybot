@@ -11,19 +11,19 @@ import (
 )
 
 var token string
-var chrisify string
+var jessify string
 var haar string
-var base_path = "/var/www/chrisbot.zikes.me/"
-var base_url = "http://chrisbot.zikes.me/"
+var base_path = "/var/www/jessify/"
+var base_url = "http://jessbot.evanlott.com/"
 
 func main() {
 	if len(os.Args) != 4 {
-		fmt.Fprintf(os.Stderr, "usage: slackbot slack-bot-token /path/to/chrisify /path/to/haar\n")
+		fmt.Fprintf(os.Stderr, "usage: slackbot slack-bot-token /path/to/jessify /path/to/haar\n")
 		os.Exit(1)
 	}
 
 	token = os.Args[1]
-	chrisify = os.Args[2]
+	jessify = os.Args[2]
 	haar = os.Args[3]
 
 	// start a websocket-based Real Time API session
@@ -43,7 +43,7 @@ func main() {
 				var channel string
 				json.Unmarshal(m.Channel, &channel)
 				file := SaveTempFile(GetFile(m.File))
-				chrisd := Chrisify(file)
+				chrisd := jessify(file)
 				// log.Printf("Uploading to %s", channel)
 				// Upload(chrisd, channel)
 				url := SaveFile(chrisd)
