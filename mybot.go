@@ -13,8 +13,8 @@ import (
 var token string
 var jessify string
 var haar string
-var base_path = "/var/www/jessify/"
-var base_url = "http://jessbot.evanlott.com/"
+var base_path = "/var/www/html/"
+var base_url = "http://util.evanlott.com/"
 
 func main() {
 	if len(os.Args) != 4 {
