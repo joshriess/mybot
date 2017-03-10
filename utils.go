@@ -81,10 +81,10 @@ func GetFile(file File) []byte {
 	return body
 }
 
-func Jessify(file string) []byte {
-	out, err := exec.Command(jessify, "--haar", haar, file).Output()
+func Chrisify(file string) []byte {
+	out, err := exec.Command(chrisify, "--haar", haar, file).Output()
 	if err != nil {
-		log.Fatalf("couldn't jessify: %s", err)
+		log.Fatalf("couldn't chrisify: %s", err)
 	}
 	return out
 }
