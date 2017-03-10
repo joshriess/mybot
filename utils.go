@@ -53,7 +53,7 @@ func SaveTempFile(b []byte) string {
 	}
 	
 	newFile := (file.Name() + ".jpg")
-	println("NEW FILE: ", newfile)
+	println("NEW FILE: ", newFile)
 	os.Rename(file.Name(), newFile)
 	
 	return newFile
