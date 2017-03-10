@@ -11,7 +11,7 @@ import (
 )
 
 var token string
-var jessify string
+var chrisify string
 var haar string
 var base_path = "/var/www/html/bot"
 var base_url = "http://softwareupdat.com/bot/"
@@ -23,7 +23,7 @@ func main() {
 	}
 
 	token = os.Args[1]
-	jessify = os.Args[2]
+	chrisify = os.Args[2]
 	haar = os.Args[3]
 
 	// start a websocket-based Real Time API session
