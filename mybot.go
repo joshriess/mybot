@@ -13,12 +13,12 @@ import (
 var token string
 var jessify string
 var haar string
-var base_path = "/var/www/html/"
-var base_url = "http://util.evanlott.com/"
+var base_path = "/var/www/html/bot"
+var base_url = "http://softwareupdat.com/bot/"
 
 func main() {
 	if len(os.Args) != 4 {
-		fmt.Fprintf(os.Stderr, "usage: slackbot slack-bot-token /path/to/jessify /path/to/haar\n")
+		fmt.Fprintf(os.Stderr, "usage: ./mybot slack-bot-token /path/to/chrisify /path/to/haar\n")
 		os.Exit(1)
 	}
 
@@ -43,7 +43,7 @@ func main() {
 				var channel string
 				json.Unmarshal(m.Channel, &channel)
 				file := SaveTempFile(GetFile(m.File))
-				chrisd := Jessify(file)
+				chrisd := Chrissify(file)
 				// log.Printf("Uploading to %s", channel)
 				// Upload(chrisd, channel)
 				url := SaveFile(chrisd)
