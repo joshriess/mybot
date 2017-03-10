@@ -50,7 +50,13 @@ func SaveTempFile(b []byte) string {
 	if err = file.Close(); err != nil {
 		log.Fatalf("error closing file: %s", err)
 	}
-	return file.Name()
+	
+	newFile := (file.Name() + ".jpg")
+	println("NEW FILE: ", newfile)
+	os.Rename(file.Name(), newFile)
+	
+	return newFile
+	//return file.Name()
 }
 
 func SaveFile(b []byte) string {
